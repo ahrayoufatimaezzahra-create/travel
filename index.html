@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Private airport transfer from Marrakech Menara Airport (RAK). Fixed price from €12. Meet & greet, flight tracking, 24/7. Book in 60 seconds." />
+  <title>Kech Travel Hub — Private Airport Transfer Marrakech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --green: #085041;
+      --accent: #1D9E75;
+      --accent-hover: #17856200;
+      --white: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(8,80,65,.10);
+      --shadow-lg: 0 8px 40px rgba(8,80,65,.18);
+    }
+
+    /* ── UTILITIES ── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 50px; font-weight: 700;
+      font-size: 1rem; cursor: pointer; transition: all .2s ease;
+      border: 2px solid transparent; white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--white);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: #158c67; border-color: #158c67; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(29,158,117,.35); }
+    .btn-white {
+      background: var(--white); color: var(--green);
+      border-color: var(--white);
+    }
+    .btn-white:hover { background: #f0faf6; transform: translateY(-1px); }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      border-color: rgba(255,255,255,.6);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.12); border-color: var(--white); }
+    .btn-lg { padding: 18px 36px; font-size: 1.05rem; }
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800; line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 560px; margin: 0 auto 48px;
+    }
+    .text-center { text-align: center; }
+
+    /* ════════════════════════════════════
+       SECTION 1 — NAVBAR
+    ════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 1px 0 var(--border);
+      transition: box-shadow .3s;
+    }
+    #navbar.scrolled { box-shadow: 0 2px 16px rgba(0,0,0,.08); }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: 800; font-size: 1.15rem; color: var(--green);
+    }
+    .nav-logo svg { width: 22px; height: 22px; }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+    }
+    .nav-links a {
+      font-size: .92rem; font-weight: 500; color: var(--text);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { margin-left: 12px; padding: 10px 22px; font-size: .9rem; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: all .3s;
+    }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 8px 0 16px;
+    }
+    .mobile-menu a {
+      padding: 12px 20px; font-weight: 500;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu .btn { margin: 12px 20px 0; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+
+    /* ════════════════════════════════════
+       SECTION 2 — HERO
+    ════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      background: var(--green);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(29,158,117,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 80px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: .8rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: block; }
+    #hero h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 900; color: var(--white);
+      line-height: 1.1; margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+    #hero h1 em { font-style: normal; color: #7de8c4; }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,.8);
+      margin-bottom: 40px; line-height: 1.6;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center; margin-bottom: 48px;
+    }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px 24px;
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 6px;
+      color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500;
+    }
+    .hero-trust-item svg { width: 14px; height: 14px; opacity: .8; }
+    .hero-trust-sep {
+      color: rgba(255,255,255,.2); font-size: 1.2rem;
+      display: flex; align-items: center;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 3 — TRUST BAR
+    ════════════════════════════════════ */
+    #trust-bar {
+      padding: 64px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .trust-item {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 12px;
+    }
+    .trust-icon {
+      width: 56px; height: 56px;
+      background: #f0faf6; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-icon svg { width: 26px; height: 26px; color: var(--accent); }
+    .trust-item h3 { font-size: 1rem; font-weight: 700; }
+    .trust-item p { font-size: .85rem; color: var(--muted); line-height: 1.4; }
+
+    /* ════════════════════════════════════
+       SECTION 4 — PRICING + BOOKING
+    ════════════════════════════════════ */
+    #pricing {
+      padding: 96px 0 80px;
+      background: #f9fafb;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-bottom: 64px;
+    }
+    .price-card {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative; transition: all .25s ease;
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .price-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(29,158,117,.1);
+    }
+    .featured-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: var(--white);
+      padding: 4px 16px; border-radius: 50px;
+      font-size: .75rem; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .price-card-icon {
+      font-size: 2rem; margin-bottom: 12px;
+    }
+    .price-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .price-card .pax { font-size: .82rem; color: var(--muted); margin-bottom: 16px; }
+    .price-amount {
+      font-size: 2rem; font-weight: 900; color: var(--green);
+      margin-bottom: 4px;
+    }
+    .price-amount span { font-size: 1rem; font-weight: 500; color: var(--muted); }
+    .price-dir { font-size: .78rem; color: var(--muted); margin-bottom: 20px; }
+    .price-features {
+      display: flex; flex-direction: column; gap: 8px;
+      margin-bottom: 24px;
+    }
+    .price-feat {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .85rem; color: var(--text);
+    }
+    .price-feat svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; }
+    .price-card .btn { width: 100%; justify-content: center; }
+
+    /* Booking form */
+    .booking-form-wrap {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .booking-form-wrap h3 {
+      font-size: 1.35rem; font-weight: 800; margin-bottom: 6px;
+    }
+    .booking-form-wrap p {
+      font-size: .9rem; color: var(--muted); margin-bottom: 28px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-bottom: 16px;
+    }
+    .form-field {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .form-field label {
+      font-size: .82rem; font-weight: 600; color: var(--text);
+    }
+    .form-field input, .form-field select {
+      padding: 12px 16px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-size: .9rem; font-family: inherit;
+      color: var(--text); background: #fff;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .form-field input:focus, .form-field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(29,158,117,.12);
+    }
+    .form-field.full { grid-column: 1/-1; }
+    .form-submit {
+      width: 100%; justify-content: center; padding: 16px;
+      font-size: 1rem; border-radius: 10px;
+    }
+    .form-note {
+      text-align: center; font-size: .78rem;
+      color: var(--muted); margin-top: 10px;
+    }
+    .form-note svg { width: 12px; height: 12px; display: inline; vertical-align: middle; }
+
+    /* ════════════════════════════════════
+       SECTION 5 — HOW IT WORKS
+    ════════════════════════════════════ */
+    #how {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px; position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute; top: 28px; left: 12.5%; right: 12.5%;
+      height: 2px; background: var(--border); z-index: 0;
+    }
+    .step {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 16px;
+      position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--green); color: var(--white);
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 900;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 2px var(--border);
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; }
+    .step p { font-size: .85rem; color: var(--muted); line-height: 1.5; }
+
+    /* ════════════════════════════════════
+       SECTION 6 — SOCIAL PROOF
+    ════════════════════════════════════ */
+    #reviews {
+      padding: 96px 0;
+      background: #f9fafb;
+    }
+    .rating-bar {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-bottom: 48px;
+    }
+    .stars { display: flex; gap: 3px; }
+    .stars svg { width: 22px; height: 22px; fill: #f59e0b; }
+    .rating-text { font-size: 1rem; font-weight: 600; }
+    .rating-count { font-size: .9rem; color: var(--muted); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      transition: box-shadow .2s;
+    }
+    .review-card:hover { box-shadow: var(--shadow); }
+    .review-stars { display: flex; gap: 2px; margin-bottom: 14px; }
+    .review-stars svg { width: 16px; height: 16px; fill: #f59e0b; }
+    .review-text {
+      font-size: .9rem; line-height: 1.65;
+      color: #374151; margin-bottom: 18px;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .review-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--green); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .85rem; flex-shrink: 0;
+    }
+    .review-name { font-size: .85rem; font-weight: 600; }
+    .review-origin { font-size: .78rem; color: var(--muted); }
+
+    /* ════════════════════════════════════
+       SECTION 7 — EXPERIENCES
+    ════════════════════════════════════ */
+    #experiences {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .exp-card {
+      display: flex; align-items: flex-start; gap: 20px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      transition: all .25s ease; cursor: pointer;
+    }
+    .exp-card:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-2px); }
+    .exp-icon {
+      font-size: 2rem; width: 60px; height: 60px;
+      background: #f0faf6; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .exp-info { flex: 1; }
+    .exp-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .exp-info p { font-size: .83rem; color: var(--muted); margin-bottom: 10px; }
+    .exp-footer {
+      display: flex; align-items: center;
+      justify-content: space-between;
+    }
+    .exp-price {
+      font-size: .9rem; font-weight: 700; color: var(--green);
+    }
+    .exp-link {
+      font-size: .8rem; font-weight: 600; color: var(--accent);
+      display: flex; align-items: center; gap: 4px;
+      transition: gap .15s;
+    }
+    .exp-link:hover { gap: 8px; }
+
+    /* ════════════════════════════════════
+       SECTION 8 — FAQ
+    ════════════════════════════════════ */
+    #faq {
+      padding: 96px 0;
+      background: #f9fafb;
+    }
+    .faq-list {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .faq-item {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item.open { border-color: var(--accent); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; padding: 20px 24px;
+      background: none; border: none; cursor: pointer;
+      text-align: left; font-family: inherit;
+      font-size: .95rem; font-weight: 600; color: var(--text);
+      gap: 12px;
+    }
+    .faq-q svg {
+      width: 20px; height: 20px; color: var(--accent);
+      transition: transform .3s; flex-shrink: 0;
+    }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 24px;
+    }
+    .faq-a-inner {
+      font-size: .9rem; color: var(--muted);
+      line-height: 1.7; padding-bottom: 20px;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 24px; }
+
+    /* ════════════════════════════════════
+       SECTION 9 — FINAL CTA
+    ════════════════════════════════════ */
+    #cta-final {
+      padding: 100px 20px;
+      background: var(--green);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(29,158,117,.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    #cta-final h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      font-weight: 900; color: var(--white);
+      margin-bottom: 14px; letter-spacing: -.02em;
+    }
+    #cta-final p {
+      color: rgba(255,255,255,.75); font-size: 1rem;
+      margin-bottom: 40px;
+    }
+    .cta-final-btns {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center; margin-bottom: 28px;
+    }
+    .cta-float-note {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.8); padding: 8px 18px;
+      border-radius: 50px; font-size: .8rem; font-weight: 500;
+    }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    footer {
+      background: #04302a; color: rgba(255,255,255,.7);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-weight: 800; font-size: 1.05rem; color: var(--white);
+    }
+    .footer-links {
+      display: flex; flex-wrap: wrap; gap: 8px 28px;
+    }
+    .footer-links a {
+      font-size: .85rem; color: rgba(255,255,255,.65);
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-wa {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .85rem; color: rgba(255,255,255,.75);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center;
+      gap: 12px; font-size: .78rem;
+    }
+
+    /* ════════════════════════════════════
+       FLOATING WHATSAPP
+    ════════════════════════════════════ */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 24px; z-index: 999;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .wa-float-label {
+      background: var(--white); color: var(--text);
+      padding: 8px 14px; border-radius: 50px;
+      font-size: .8rem; font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0,0,0,.14);
+      white-space: nowrap; animation: fadeInRight .5s ease 1.5s both;
+    }
+    .wa-float-btn {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      transition: transform .2s, box-shadow .2s;
+      animation: pulse 3s ease infinite;
+    }
+    .wa-float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.6); }
+    .wa-float-btn svg { width: 28px; height: 28px; }
+
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,.7), 0 0 0 8px rgba(37,211,102,.12); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .price-card:last-child { grid-column: 1/-1; max-width: 480px; margin: 0 auto; width: 100%; }
+      .steps-grid { grid-template-columns: repeat(2,1fr); }
+      .steps-grid::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .trust-grid { grid-template-columns: repeat(2,1fr); }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card:last-child { grid-column: auto; max-width: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .booking-form-wrap { padding: 28px 20px; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .wa-float-label { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+      .cta-final-btns { flex-direction: column; align-items: center; }
+      .cta-final-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+══════════════════════════════════ -->
+<a href="https://wa.me/212600000000?text=Hello%2C%20I%27d%20like%20to%20book%20an%20airport%20transfer%20from%20RAK." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-label">We reply in 2 min</span>
+  <span class="wa-float-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </span>
+</a>
+
+<!-- ══════════════════════════════════
+     SECTION 1 — NAVBAR
+══════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      Kech Travel Hub
+    </a>
+    <ul class="nav-links">
+      <li><a href="#pricing">Transfers</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#faq">Contact</a></li>
+    </ul>
+    <a href="#pricing" class="btn btn-primary nav-cta">Book transfer</a>
+    <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#pricing" onclick="toggleMenu()">Transfers</a>
+    <a href="#experiences" onclick="toggleMenu()">Experiences</a>
+    <a href="#faq" onclick="toggleMenu()">Contact</a>
+    <a href="#pricing" class="btn btn-primary" onclick="toggleMenu()">Book transfer</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     SECTION 2 — HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span></span>
+      Marrakech airport transfer
+    </div>
+    <h1>Your private driver.<br><em>Fixed price.</em> No stress.</h1>
+    <p class="hero-sub">
+      From RAK airport to your riad in 20 minutes.<br>
+      Meet &amp; greet included · Flight tracking · 24/7 availability
+    </p>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn btn-white btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Book now — from €12
+      </a>
+      <a href="https://wa.me/212600000000?text=Hello%2C%20I%27d%20like%20to%20book%20a%20transfer." class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        WhatsApp us
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Licensed drivers
+      </div>
+      <div class="hero-trust-sep">·</div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        5-star rated
+      </div>
+      <div class="hero-trust-sep">·</div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Secure payment
+      </div>
+      <div class="hero-trust-sep">·</div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Always on time
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3 — TRUST BAR
+══════════════════════════════════ -->
+<section id="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <h3>Private car</h3>
+        <p>No shared rides. Your driver, your schedule — just for your group.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>Fixed price</h3>
+        <p>No meter. No surprises. The price you see is exactly what you pay.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+          </svg>
+        </div>
+        <h3>Flight tracked</h3>
+        <p>We monitor your flight. Delayed? We wait — at no extra cost, ever.</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>WhatsApp live</h3>
+        <p>Real-time updates from your driver. We reply in under 2 minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 4 — PRICING + BOOKING
+══════════════════════════════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div style="display:inline-block;background:#f0faf6;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:12px;">Simple pricing</div>
+      <h2 class="section-title">Choose your ride</h2>
+      <p class="section-sub">All vehicles are private — no sharing. All prices include meet &amp; greet at arrivals.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Card 1 -->
+      <div class="price-card">
+        <div class="price-card-icon">🚗</div>
+        <h3>Standard Sedan</h3>
+        <p class="pax">Up to 3 passengers</p>
+        <div class="price-amount">€12 <span>one way</span></div>
+        <p class="price-dir">€20 return</p>
+        <ul class="price-features">
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Air conditioning
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2 bags included
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Name sign at arrivals
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Flight tracking
+          </li>
+        </ul>
+        <a href="#booking-form" class="btn btn-primary">Select sedan</a>
+      </div>
+      <!-- Card 2 — FEATURED -->
+      <div class="price-card featured">
+        <div class="featured-badge">Most popular</div>
+        <div class="price-card-icon">🚐</div>
+        <h3>Minivan</h3>
+        <p class="pax">Up to 6 passengers</p>
+        <div class="price-amount">€18 <span>one way</span></div>
+        <p class="price-dir">€30 return</p>
+        <ul class="price-features">
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            4 bags + luggage space
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Child seat available
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Air conditioning
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Name sign at arrivals
+          </li>
+        </ul>
+        <a href="#booking-form" class="btn btn-primary">Select minivan</a>
+      </div>
+      <!-- Card 3 -->
+      <div class="price-card">
+        <div class="price-card-icon">🚙</div>
+        <h3>Luxury SUV</h3>
+        <p class="pax">Up to 4 passengers</p>
+        <div class="price-amount">€35 <span>one way</span></div>
+        <p class="price-dir">€60 return</p>
+        <ul class="price-features">
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Premium vehicle
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Water &amp; Wi-Fi onboard
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            VIP meet &amp; greet
+          </li>
+          <li class="price-feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Flight tracking
+          </li>
+        </ul>
+        <a href="#booking-form" class="btn btn-primary">Select luxury</a>
+      </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="booking-form-wrap" id="booking-form">
+      <h3>Confirm your booking</h3>
+      <p>Fill in your details and we'll confirm via WhatsApp + email within minutes.</p>
+      <form onsubmit="handleBooking(event)">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="arrival-date">Arrival date</label>
+            <input type="date" id="arrival-date" name="arrival-date" required />
+          </div>
+          <div class="form-field">
+            <label for="flight-number">Flight number</label>
+            <input type="text" id="flight-number" name="flight-number" placeholder="e.g. AT 506" required />
+          </div>
+          <div class="form-field">
+            <label for="hotel">Hotel / Riad name</label>
+            <input type="text" id="hotel" name="hotel" placeholder="e.g. Riad Kniza, Medina" required />
+          </div>
+          <div class="form-field">
+            <label for="passengers">Number of passengers</label>
+            <select id="passengers" name="passengers" required>
+              <option value="" disabled selected>Select passengers</option>
+              <option value="1">1 passenger</option>
+              <option value="2">2 passengers</option>
+              <option value="3">3 passengers</option>
+              <option value="4">4 passengers</option>
+              <option value="5">5 passengers</option>
+              <option value="6">6 passengers</option>
+              <option value="7+">7+ passengers</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label for="vehicle">Vehicle type</label>
+            <select id="vehicle" name="vehicle" required>
+              <option value="" disabled selected>Choose your vehicle</option>
+              <option value="sedan">Standard Sedan — €12 one way</option>
+              <option value="minivan">Minivan — €18 one way</option>
+              <option value="suv">Luxury SUV — €35 one way</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Confirm booking — secure &amp; instant
+        </button>
+        <p class="form-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          &nbsp;Secure form · No payment now · Confirmed by WhatsApp
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5 — HOW IT WORKS
+══════════════════════════════════ -->
+<section id="how">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:56px;">
+      <div style="display:inline-block;background:#f0faf6;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:12px;">Simple process</div>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">From booking to arrival in 4 easy steps — no apps, no complications.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Book online</h3>
+        <p>Fill the form above. Takes under 60 seconds. No account needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Get confirmed</h3>
+        <p>Receive your confirmation via WhatsApp and email within minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Find your driver</h3>
+        <p>Name sign at the arrivals hall. Driver contacts you before you fly.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Arrive relaxed</h3>
+        <p>Sit back and enjoy the ride. We handle everything so you don't have to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 6 — SOCIAL PROOF
+══════════════════════════════════ -->
+<section id="reviews">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:8px;">
+      <div style="display:inline-block;background:#f0faf6;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;">Verified reviews</div>
+      <h2 class="section-title">Travelers love us</h2>
+    </div>
+    <div class="rating-bar">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <span class="rating-text">4.9 / 5</span>
+      <span class="rating-count">· 200+ verified reviews</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"Driver waiting at arrivals with our name. Car spotless. At our riad in 20 minutes. Absolutely flawless — would book again without question."</p>
+        <div class="review-author">
+          <div class="review-avatar">SM</div>
+          <div>
+            <div class="review-name">Sarah M.</div>
+            <div class="review-origin">United Kingdom 🇬🇧</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"€12 for a private transfer — I expected something rough. Instead got a clean Mercedes and a professional driver. Best part of the whole arrival experience."</p>
+        <div class="review-author">
+          <div class="review-avatar">MT</div>
+          <div>
+            <div class="review-name">Marco T.</div>
+            <div class="review-origin">Italy 🇮🇹</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"Our flight was delayed 2 hours. The driver waited the whole time and even sent a WhatsApp asking for our new arrival time. Incredible service — 10/10."</p>
+        <div class="review-author">
+          <div class="review-avatar">JB</div>
+          <div>
+            <div class="review-name">Julie B.</div>
+            <div class="review-origin">France 🇫🇷</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 7 — EXPERIENCES UPSELL
+══════════════════════════════════ -->
+<section id="experiences">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div style="display:inline-block;background:#f0faf6;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:12px;">Add to your trip</div>
+      <h2 class="section-title">Unforgettable experiences</h2>
+      <p class="section-sub">Book with your transfer and we'll handle every detail. Local guides, top-rated activities.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-icon">🏜️</div>
+        <div class="exp-info">
+          <h3>Quad + desert dinner</h3>
+          <p>Race through the dunes, then dine under the stars in Agafay desert.</p>
+          <div class="exp-footer">
+            <span class="exp-price">From €45 / person</span>
+            <a href="#booking-form" class="exp-link">
+              Add to booking
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🐪</div>
+        <div class="exp-info">
+          <h3>Camel ride</h3>
+          <p>Classic Marrakech experience at sunset — through Palmeraie palm groves.</p>
+          <div class="exp-footer">
+            <span class="exp-price">From €20 / person</span>
+            <a href="#booking-form" class="exp-link">
+              Add to booking
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🌅</div>
+        <div class="exp-info">
+          <h3>Agafay desert experience</h3>
+          <p>Full day in the rocky desert with lunch, activities, and panoramic Atlas views.</p>
+          <div class="exp-footer">
+            <span class="exp-price">From €60 / person</span>
+            <a href="#booking-form" class="exp-link">
+              Add to booking
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon">🏔️</div>
+        <div class="exp-info">
+          <h3>Ourika valley day trip</h3>
+          <p>Atlas Mountain villages, Berber culture, and fresh mountain air — just 1 hour from Marrakech.</p>
+          <div class="exp-footer">
+            <span class="exp-price">From €35 / person</span>
+            <a href="#booking-form" class="exp-link">
+              Add to booking
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 8 — FAQ
+══════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div style="display:inline-block;background:#f0faf6;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:12px;">Common questions</div>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Everything you need to know before you land.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is the price really fixed?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes, completely. The price you see is the price you pay — no meter running, no extra charges, no surprises. Pay by cash or card on arrival, whichever you prefer.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if my flight is delayed?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">We track your flight in real time. If it's delayed by 30 minutes or 4 hours, your driver waits at no extra cost — however long it takes. You'll receive a WhatsApp update when your driver is in position.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I find my driver?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Your driver will hold a name sign in the arrivals hall. Before you fly, we'll send you a WhatsApp message with your driver's name, photo, and contact number — so you always know who to look for.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I book last minute?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Absolutely. WhatsApp us directly for same-day bookings — we confirm availability in under 5 minutes. We're available 24/7, including nights, weekends, and holidays.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 9 — FINAL CTA
+══════════════════════════════════ -->
+<section id="cta-final">
+  <div class="cta-final-inner">
+    <h2>Ready to book your<br>Marrakech transfer?</h2>
+    <p>Private · Fixed price · Professional driver waiting</p>
+    <div class="cta-final-btns">
+      <a href="#booking-form" class="btn btn-white btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book online — from €12
+      </a>
+      <a href="https://wa.me/212600000000?text=Hello%2C%20I%27d%20like%20to%20book%20an%20airport%20transfer." class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        WhatsApp us now
+      </a>
+    </div>
+    <div class="cta-float-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Need help? We reply in under 2 minutes
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="footer-logo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          Kech Travel Hub
+        </a>
+        <p style="font-size:.82rem;margin-top:10px;max-width:240px;line-height:1.6;">Private airport transfers & curated experiences in Marrakech, Morocco.</p>
+      </div>
+      <div>
+        <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.4);margin-bottom:14px;">Services</p>
+        <ul class="footer-links" style="flex-direction:column;gap:10px;">
+          <li><a href="#pricing">Airport Transfer</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#how">About</a></li>
+          <li><a href="#faq">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.4);margin-bottom:14px;">Contact</p>
+        <a href="https://wa.me/212600000000" class="footer-wa" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          +212 600 000 000
+        </a>
+        <p style="font-size:.82rem;margin-top:10px;color:rgba(255,255,255,.5);">Available 24/7 · Replies in 2 min</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Kech Travel Hub. All rights reserved.</span>
+      <span style="color:rgba(255,255,255,.3);">Marrakech, Morocco 🇲🇦</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── NAVBAR scroll shadow ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  /* ── Mobile menu toggle ── */
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  /* ── FAQ accordion ── */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Booking form ── */
+  function handleBooking(e) {
+    e.preventDefault();
+    const form = e.target;
+    const date = form['arrival-date'].value;
+    const flight = form['flight-number'].value;
+    const hotel = form['hotel'].value;
+    const pax = form['passengers'].value;
+    const vehicle = form['vehicle'].value;
+
+    const vehicleMap = { sedan: 'Standard Sedan (€12)', minivan: 'Minivan (€18)', suv: 'Luxury SUV (€35)' };
+    const msg = encodeURIComponent(
+      `Hello Kech Travel Hub! I'd like to book a transfer:\n` +
+      `📅 Date: ${date}\n✈️ Flight: ${flight}\n🏨 Hotel/Riad: ${hotel}\n` +
+      `👥 Passengers: ${pax}\n🚗 Vehicle: ${vehicleMap[vehicle] || vehicle}`
+    );
+    window.open(`https://wa.me/212600000000?text=${msg}`, '_blank');
+  }
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 76;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── Intersection observer: fade-in sections ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.price-card, .review-card, .exp-card, .step, .trust-item, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
