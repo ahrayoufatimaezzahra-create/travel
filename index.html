@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoboticsRemote – Advanced Remote Robotics Solutions</title>
+  <meta name="description" content="RoboticsRemote delivers cutting-edge remote robotics technology for industrial, medical, and exploration applications. Control the future, from anywhere." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2"/>
+            <circle cx="11" cy="17" r="2" fill="currentColor"/>
+            <circle cx="21" cy="17" r="2" fill="currentColor"/>
+            <rect x="13" y="15" width="6" height="4" rx="1" fill="currentColor"/>
+            <path d="M10 10V7M22 10V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="10" cy="6" r="1.5" fill="currentColor"/>
+            <circle cx="22" cy="6" r="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">RoboticsRemote</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#solutions">Solutions</a>
+        <a href="#technology">Technology</a>
+        <a href="#industries">Industries</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Get a Demo</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Next-Generation Remote Robotics
+      </div>
+      <h1 class="hero-title">
+        Control Robots.<br/>
+        <span class="gradient-text">From Anywhere.</span>
+      </h1>
+      <p class="hero-subtitle">
+        RoboticsRemote engineers precision teleoperation systems that bridge the gap between human intelligence and robotic capability — enabling real-time control over any distance.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <span>Request a Demo</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#solutions" class="btn btn-outline">Explore Solutions</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">99.9<span class="stat-unit">%</span></span>
+          <span class="stat-label">Uptime Reliability</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">&lt;5<span class="stat-unit">ms</span></span>
+          <span class="stat-label">Latency Average</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">200<span class="stat-unit">+</span></span>
+          <span class="stat-label">Deployed Systems</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="robot-card">
+        <div class="robot-screen">
+          <div class="screen-header">
+            <span class="screen-dot red"></span>
+            <span class="screen-dot yellow"></span>
+            <span class="screen-dot green"></span>
+            <span class="screen-title">Live Feed — Unit #047</span>
+          </div>
+          <div class="screen-body">
+            <div class="scan-line"></div>
+            <div class="crosshair">
+              <div class="ch-h"></div>
+              <div class="ch-v"></div>
+              <div class="ch-circle"></div>
+            </div>
+            <div class="telemetry">
+              <div class="telem-row"><span>STATUS</span><span class="green-text">ONLINE</span></div>
+              <div class="telem-row"><span>LATENCY</span><span class="green-text">3.2ms</span></div>
+              <div class="telem-row"><span>SIGNAL</span><span class="green-text">98%</span></div>
+              <div class="telem-row"><span>BATTERY</span><span class="yellow-text">74%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="robot-controls">
+          <div class="ctrl-pad">
+            <button class="ctrl-btn">↑</button>
+            <div class="ctrl-row">
+              <button class="ctrl-btn">←</button>
+              <button class="ctrl-btn ctrl-center">●</button>
+              <button class="ctrl-btn">→</button>
+            </div>
+            <button class="ctrl-btn">↓</button>
+          </div>
+          <div class="ctrl-info">
+            <div class="ctrl-label">REMOTE CONTROL</div>
+            <div class="ctrl-status"><span class="pulse-dot"></span> Connected</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOGOS MARQUEE ========== -->
+  <section class="marquee-section">
+    <div class="marquee-label">Trusted by industry leaders</div>
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Aerospace Corp</span><span>MedRobotics Inc</span><span>DeepSea Systems</span><span>NuclearTech Ltd</span><span>AutoFactory Pro</span><span>SpaceOps Global</span><span>DefenseLogic</span><span>IndustrialAI</span>
+        <span>Aerospace Corp</span><span>MedRobotics Inc</span><span>DeepSea Systems</span><span>NuclearTech Ltd</span><span>AutoFactory Pro</span><span>SpaceOps Global</span><span>DefenseLogic</span><span>IndustrialAI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOLUTIONS ========== -->
+  <section class="section solutions" id="solutions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Build</span>
+        <h2>Complete Remote Robotics<br/>Solutions Stack</h2>
+        <p>From hardware to cloud infrastructure, we deliver end-to-end teleoperation systems built for reliability in the world's most demanding environments.</p>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card card-featured">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="15" r="2" fill="currentColor"/><circle cx="19" cy="15" r="2" fill="currentColor"/><rect x="11" y="13" width="6" height="4" rx="1" fill="currentColor"/><path d="M9 8V5M19 8V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Teleoperation Platform</h3>
+          <p>Full-duplex control system with sub-5ms latency, haptic feedback, and redundant communication channels for uninterrupted operation.</p>
+          <ul class="card-features">
+            <li>Haptic force-feedback gloves</li>
+            <li>360° stereoscopic vision</li>
+            <li>Redundant 5G/satellite link</li>
+          </ul>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/><path d="M14 4v4M14 20v4M4 14h4M20 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="3" fill="currentColor"/></svg>
+          </div>
+          <h3>RoboCloud Network</h3>
+          <p>Global low-latency relay network with 99.9% uptime SLA, edge computing nodes, and end-to-end encrypted control streams.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4L4 9v5c0 5.25 4.2 10.15 10 11.35C19.8 24.15 24 19.25 24 14V9L14 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 14l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Safety & Compliance</h3>
+          <p>ISO-certified safety protocols with automatic emergency stops, collision detection, and full audit logging for regulated industries.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 12h12M8 16h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="16" r="2" fill="currentColor"/></svg>
+          </div>
+          <h3>AI-Assisted Control</h3>
+          <p>Onboard AI co-pilot that stabilizes motion, predicts collisions, and assists operators with complex manipulation tasks in real time.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 10h18M5 14h18M5 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="3" y="6" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Fleet Management</h3>
+          <p>Unified dashboard to manage, monitor, and dispatch hundreds of robotic units simultaneously across multiple sites worldwide.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3v4M14 21v4M3 14h4M21 14h4M6.1 6.1l2.83 2.83M19.07 19.07l2.83 2.83M19.07 8.93l2.83-2.83M6.1 21.9l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Developer API & SDK</h3>
+          <p>REST & WebSocket APIs, ROS2 integration, and an open SDK so your engineering team can build custom robotic applications on our platform.</p>
+          <a href="#contact" class="card-link">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TECHNOLOGY ========== -->
+  <section class="section technology" id="technology">
+    <div class="container tech-layout">
+      <div class="tech-text">
+        <span class="section-tag">Our Technology</span>
+        <h2>Engineered for the<br/>Harshest Conditions</h2>
+        <p>Our proprietary low-latency stack combines adaptive bitrate video streaming, predictive motion compensation, and military-grade encryption to keep operators in full control — even on degraded networks.</p>
+        <div class="tech-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">⚡</div>
+            <div>
+              <h4>Ultra-Low Latency</h4>
+              <p>Proprietary transport protocol achieving &lt;5ms average over 5G and &lt;25ms over satellite links.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🔒</div>
+            <div>
+              <h4>Military-Grade Security</h4>
+              <p>AES-256 encrypted channels with zero-trust architecture and hardware attestation.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🧠</div>
+            <div>
+              <h4>AI Co-Pilot</h4>
+              <p>Onboard inference with edge GPUs enabling real-time obstacle avoidance and task assistance.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Talk to an Engineer</a>
+      </div>
+      <div class="tech-visual">
+        <div class="tech-diagram">
+          <div class="diagram-center">
+            <div class="diagram-hub">
+              <span>RoboCloud</span>
+            </div>
+          </div>
+          <div class="diagram-node node-1">
+            <div class="node-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="10.5" r="1.5" fill="currentColor"/><circle cx="14" cy="10.5" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <span>Robot Unit</span>
+          </div>
+          <div class="diagram-node node-2">
+            <div class="node-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 8h8M6 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Operator</span>
+          </div>
+          <div class="diagram-node node-3">
+            <div class="node-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Edge Node</span>
+          </div>
+          <div class="diagram-node node-4">
+            <div class="node-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L2 6v4c0 4 3.2 7.7 8 8.7C15.8 17.7 18 14 18 10V6L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Security Layer</span>
+          </div>
+          <svg class="diagram-lines" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="150" y1="150" x2="150" y2="50" stroke="rgba(99,102,241,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="150" y1="150" x2="250" y2="150" stroke="rgba(99,102,241,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="150" y1="150" x2="150" y2="250" stroke="rgba(99,102,241,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="150" y1="150" x2="50" y2="150" stroke="rgba(99,102,241,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INDUSTRIES ========== -->
+  <section class="section industries" id="industries">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Industries We Serve</span>
+        <h2>Where Remote Robotics<br/>Changes Everything</h2>
+        <p>From nuclear decommissioning to deep-sea exploration, our systems operate where humans can't — or shouldn't.</p>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-card" style="--accent: #6366f1">
+          <div class="industry-img ind-industrial"></div>
+          <div class="industry-body">
+            <h3>Industrial & Manufacturing</h3>
+            <p>Automate hazardous assembly lines, inspect confined spaces, and manage heavy machinery remotely with zero operator risk.</p>
+          </div>
+        </div>
+        <div class="industry-card" style="--accent: #06b6d4">
+          <div class="industry-img ind-medical"></div>
+          <div class="industry-body">
+            <h3>Medical & Surgical</h3>
+            <p>Enable remote-assisted surgeries and sterile-environment robotics with haptic precision feedback and microsecond-accurate control.</p>
+          </div>
+        </div>
+        <div class="industry-card" style="--accent: #10b981">
+          <div class="industry-img ind-exploration"></div>
+          <div class="industry-body">
+            <h3>Exploration & Research</h3>
+            <p>Deep-sea, underground, and extraterrestrial robotics operating in environments where communication delays demand advanced autonomy.</p>
+          </div>
+        </div>
+        <div class="industry-card" style="--accent: #f59e0b">
+          <div class="industry-img ind-defense"></div>
+          <div class="industry-body">
+            <h3>Defense & Security</h3>
+            <p>Bomb disposal, perimeter patrol, and surveillance missions using hardened systems certified for classified deployments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="container about-layout">
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-metric">
+            <span class="metric-big">10+</span>
+            <span class="metric-label">Years of R&D</span>
+          </div>
+          <div class="about-metric">
+            <span class="metric-big">48</span>
+            <span class="metric-label">Countries Active</span>
+          </div>
+          <div class="about-metric">
+            <span class="metric-big">200+</span>
+            <span class="metric-label">Systems Deployed</span>
+          </div>
+          <div class="about-metric">
+            <span class="metric-big">40+</span>
+            <span class="metric-label">Engineers & Scientists</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Who We Are</span>
+        <h2>Built by Engineers,<br/>Trusted by Industry</h2>
+        <p>RoboticsRemote was founded in 2014 by a team of robotics engineers, ex-NASA researchers, and telecom specialists with a single goal: make remote robotic operation as natural and reliable as being there in person.</p>
+        <p>Today we operate a global network of edge nodes that power teleoperation for clients in nuclear energy, aerospace, medicine, and underwater operations. Our team of 40+ engineers continues to push the boundaries of what's possible when human skill meets robotic precision.</p>
+        <div class="about-values">
+          <div class="value"><span class="value-icon">🎯</span><span>Precision-first engineering</span></div>
+          <div class="value"><span class="value-icon">🌐</span><span>Global edge infrastructure</span></div>
+          <div class="value"><span class="value-icon">🔬</span><span>Continuous R&D investment</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What Clients Say</span>
+        <h2>Trusted Across the Globe</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p>"RoboticsRemote's platform let us inspect reactor vessels without sending a single person into a hot zone. The latency is genuinely remarkable — our operators forget they're not physically present."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-1">JR</div>
+            <div>
+              <strong>James R.</strong>
+              <span>Chief Safety Officer, NuclearTech Ltd</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p>"We deployed 12 units across our deep-sea pipeline inspection fleet. The ROI was visible within the first quarter — no dive crew costs, no surface support vessels, and 24/7 operational capability."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-2">SA</div>
+            <div>
+              <strong>Sara A.</strong>
+              <span>VP Operations, DeepSea Systems</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p>"The haptic feedback system is next-level. Our surgical assistants in rural hospitals can now get real-time guidance from specialists thousands of miles away. It's transforming patient outcomes."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av-3">DM</div>
+            <div>
+              <strong>Dr. Marc D.</strong>
+              <span>Director of Surgical Innovation, MedRobotics Inc</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT / CTA ========== -->
+  <section class="section contact" id="contact">
+    <div class="container contact-layout">
+      <div class="contact-text">
+        <span class="section-tag">Get in Touch</span>
+        <h2>Ready to Deploy<br/>Remote Robotics?</h2>
+        <p>Our engineering team will assess your use case and design a tailored solution. Typical deployment timelines are 6–12 weeks from contract to live operation.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z" stroke="currentColor" stroke-width="1.5"/><path d="M2 5l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span>contact@roboticsremote.com</span>
+          </div>
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 012-2h1.5a1 1 0 011 .87l.5 3.5a1 1 0 01-.29.93l-1.2 1.2a14 14 0 006 6l1.2-1.2a1 1 0 01.93-.29l3.5.5A1 1 0 0117 15.5V17a2 2 0 01-2 2A14 14 0 013 5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>+1 (800) ROB-OTICS</span>
+          </div>
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 11a4 4 0 100-8 4 4 0 000 8zM2 18c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>San Francisco, CA · London, UK · Singapore</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Your company name" />
+        </div>
+        <div class="form-group">
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry">
+            <option value="">Select your industry</option>
+            <option>Industrial & Manufacturing</option>
+            <option>Medical & Healthcare</option>
+            <option>Defense & Security</option>
+            <option>Exploration & Research</option>
+            <option>Energy & Utilities</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" rows="4" placeholder="Describe your use case, scale, and requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Send Request</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="form-success" id="formSuccess">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Message sent! We'll be in touch within 24 hours.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="6" y="10" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="17" r="2" fill="currentColor"/><circle cx="21" cy="17" r="2" fill="currentColor"/><rect x="13" y="15" width="6" height="4" rx="1" fill="currentColor"/><path d="M10 10V7M22 10V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="6" r="1.5" fill="currentColor"/><circle cx="22" cy="6" r="1.5" fill="currentColor"/></svg>
+          </span>
+          <span class="logo-text">RoboticsRemote</span>
+        </a>
+        <p>Control the future, from anywhere.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="GitHub">⌥</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="#">Teleoperation Platform</a>
+          <a href="#">RoboCloud Network</a>
+          <a href="#">Fleet Dashboard</a>
+          <a href="#">Developer SDK</a>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <a href="#">Industrial</a>
+          <a href="#">Medical</a>
+          <a href="#">Defense</a>
+          <a href="#">Exploration</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Blog</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+          <a href="#">Compliance</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2026 RoboticsRemote Inc. All rights reserved.</span>
+        <span>roboticsremote.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
