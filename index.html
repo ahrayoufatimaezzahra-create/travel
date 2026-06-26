@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orebol – Shop the World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Ore<span>bol</span></a>
+      <nav class="nav">
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="btn-icon" id="searchBtn" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="btn-icon cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-primary" onclick="location.href='#shop'">Shop Now</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__tag">New Collection 2026</p>
+      <h1>Discover Your <br/><span>Perfect Style</span></h1>
+      <p class="hero__sub">Premium products curated for those who seek quality and elegance.</p>
+      <div class="hero__actions">
+        <a href="#shop" class="btn-primary btn-lg">Explore Shop</a>
+        <a href="#about" class="btn-outline btn-lg">Our Story</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__badge">✦ Free Shipping Over $50</div>
+      <div class="floating-card card1">
+        <span>⭐ 4.9</span> 2,400+ Reviews
+      </div>
+      <div class="floating-card card2">
+        🛍️ 500+ Products
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BANNER -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Free Returns &nbsp;✦&nbsp; Secure Payment &nbsp;✦&nbsp; 24/7 Support &nbsp;✦&nbsp; Premium Quality &nbsp;✦&nbsp; Fast Delivery &nbsp;✦&nbsp; Free Returns &nbsp;✦&nbsp; Secure Payment &nbsp;✦&nbsp; 24/7 Support &nbsp;✦&nbsp; Premium Quality &nbsp;✦&nbsp; Fast Delivery &nbsp;✦&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <h2 class="section__title">Shop by Category</h2>
+      <div class="categories-grid">
+        <div class="category-card" data-filter="accessories">
+          <div class="category-card__icon">👜</div>
+          <h3>Accessories</h3>
+          <p>Bags, Jewelry & More</p>
+        </div>
+        <div class="category-card" data-filter="clothing">
+          <div class="category-card__icon">👕</div>
+          <h3>Clothing</h3>
+          <p>Tops, Bottoms & Outerwear</p>
+        </div>
+        <div class="category-card" data-filter="footwear">
+          <div class="category-card__icon">👟</div>
+          <h3>Footwear</h3>
+          <p>Sneakers, Boots & Sandals</p>
+        </div>
+        <div class="category-card" data-filter="home">
+          <div class="category-card__icon">🏠</div>
+          <h3>Home & Living</h3>
+          <p>Décor & Essentials</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section section--gray" id="shop">
+    <div class="container">
+      <h2 class="section__title">Featured Products</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+        <button class="filter-btn" data-filter="clothing">Clothing</button>
+        <button class="filter-btn" data-filter="footwear">Footwear</button>
+        <button class="filter-btn" data-filter="home">Home</button>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section__title">Why Choose Orebol?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Orders ship within 24 hours. Free delivery on orders over $50.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Payments</h3>
+          <p>256-bit SSL encryption keeps your transactions safe and private.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">↩️</div>
+          <h3>Easy Returns</h3>
+          <p>Not happy? Return within 30 days for a full refund, no questions asked.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Global Reach</h3>
+          <p>We ship to 80+ countries worldwide with real-time tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <div>
+        <h2>Stay in the Loop</h2>
+        <p>Get exclusive deals, new arrivals and style tips straight to your inbox.</p>
+      </div>
+      <form class="newsletter__form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--gray" id="contact">
+    <div class="container">
+      <h2 class="section__title">Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <div>
+              <strong>Email</strong>
+              <p>support@orebol.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <div>
+              <strong>Phone</strong>
+              <p>+1 (800) 673-2650</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📍</span>
+            <div>
+              <strong>Address</strong>
+              <p>123 Commerce Ave, New York, NY 10001</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <input type="text" placeholder="Subject" />
+          <textarea rows="5" placeholder="Your message..." required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">Ore<span>bol</span></a>
+        <p>Premium shopping experience for discerning customers worldwide.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <h4>Shop</h4>
+        <a href="#shop">New Arrivals</a>
+        <a href="#categories">Categories</a>
+        <a href="#">Sale</a>
+        <a href="#">Gift Cards</a>
+      </div>
+      <div class="footer__links">
+        <h4>Help</h4>
+        <a href="#">FAQs</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="footer__links">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Orebol.com — All rights reserved.</p>
+      <p>Designed with ❤️</p>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__header">
+      <h3>Your Cart (<span id="cartItemCount">0</span>)</h3>
+      <button id="closeCart">✕</button>
+    </div>
+    <div class="cart-sidebar__items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-sidebar__footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn-primary btn-block">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
